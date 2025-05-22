@@ -15,13 +15,13 @@ import '08_type_system.dart' show Element;
 // Deferred loading (also called lazy loading) allows a web app to load a library on demand, 
 // if and when the library is needed. 
 // Use deferred loading when you want to meet one or more of the following needs.
-import 'dart:collection' deferred as collection;
+// The dart tool doesn't support deferred loading for targets other than web.
+// import 'dart:collection' deferred as collection;
 
 void main() {
   assert(math.pi == pi);
-  collection.loadLibrary().then((_) {
-    // Use library
-    // Or using "await collection.loadLibrary()" instead
-    return;
-  });
+  // collection.loadLibrary().then((_) { // Use library
+  //   // Or using "await collection.loadLibrary()" instead
+  //   return;
+  // });
 }
