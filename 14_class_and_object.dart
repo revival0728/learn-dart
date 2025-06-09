@@ -7,6 +7,7 @@ class Point {
   final int _planeId = 0;
 
   // Generative constructors with assert validation during development
+  // constructors are also functions :)
   Point(this.x, this.y);
 
   // Named constructors with initializer list
