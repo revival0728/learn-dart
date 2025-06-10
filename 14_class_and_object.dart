@@ -38,6 +38,7 @@ class Vector extends Point {
   Vector.sameXY(double value) : this(value, value);
 
   // Factory constructors
+  // The constructor doesn't always create a new instance of its class.
   // Although a factory constructor can't return null, it might return:
   //  an existing instance from a cache instead of creating a new one
   //  a new instance of a subtype

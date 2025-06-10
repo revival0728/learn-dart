@@ -33,4 +33,10 @@ void main() {
   // The spread operator isn't actually an operator expression. 
   // The .../...? syntax is part of the collection literal itself. 
   // So, you can learn more about spread operators on the Collections page.
+
+  // division
+  var int_1 = 1;
+  var int_3 = 3;
+  assert(int_1 / int_3 is double);
+  assert(int_1 ~/ int_3 is int);
 }
