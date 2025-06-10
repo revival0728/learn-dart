@@ -139,18 +139,19 @@ class LinearEquation extends ProblemLike {
 
   void printInfo() {
     print("LinearEquation:");
-    print("a: $a");
-    print("b: $b");
-    print("c: $c");
+    print("a: ${a.value}");
+    print("b: ${b.value}");
+    print("c: ${c.value}");
   }
   Real? solve() {
     if(a == 0) return null;
-    return (b - c) / a;
+    return (c - b) / a;
   }
 }
 
 class LinearEquationSolvable extends LinearEquation with Solvable<Real> {
   LinearEquationSolvable(Real a, Real b, Real c) : assert(a != 0), super(a, b, c);
+  LinearEquationSolvable.fromDoubles(double a, double b, double c) : this(Real(a), Real(b), Real(c));
 
   Real? cache;
 
@@ -162,4 +163,11 @@ class LinearEquationSolvable extends LinearEquation with Solvable<Real> {
 
   Real get answer => (solved ? cache : cache = solve())!;
   bool Function(Variable)? get checker => null;
+}
+
+void main() {
+  var equation = LinearEquationSolvable.fromDoubles(1, 2, 3);
+  equation.printInfo();
+  print("answer: ${equation.answer.value}");
+  print("valid: ${equation.isAnswerValid()}");
 }
